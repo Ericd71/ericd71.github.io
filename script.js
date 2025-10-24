@@ -100,3 +100,63 @@ if (contactForm) {
         this.reset();
     });
 }
+
+// Image Modal functionality
+function setupImageModal() {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.querySelector(".close");
+
+    function openModal(src, alt) {
+        modal.style.display = "flex"; // Changed to flex for centering
+        modalImg.src = src;
+        captionText.innerHTML = alt;
+        
+        // Add class based on image orientation for styling
+        const img = new Image();
+        img.onload = function() {
+            if (this.width > this.height) {
+                modalImg.classList.add('horizontal-image');
+            } else {
+                modalImg.classList.remove('horizontal-image');
+            }
+        };
+        img.src = src;
+    }
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            modal.style.display = "none";
+        }
+    });
+
+    // Add click events
+    const projectImages = document.querySelectorAll('.project-image');
+    projectImages.forEach(img => {
+        img.addEventListener('click', function() {
+            openModal(this.src, this.alt);
+        });
+    });
+
+    const placeholders = document.querySelectorAll('.project-image-placeholder');
+    placeholders.forEach(placeholder => {
+        placeholder.addEventListener('click', function() {
+            alert('Add your project screenshot here! When you add real images, they will open in full size.');
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupImageModal();
+});

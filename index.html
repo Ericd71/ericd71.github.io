@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -346,12 +352,24 @@
             <div class="project-grid">
                 <div class="project-card">
                     <h3>Fuel Tracking App</h3>
-                    <p>Web and mobile application designed to track fuel consumption, calculate costs, and provide
-                        analytics for better vehicle management.</p>
+                    <p>Website designed to track fuel consumption, calculate costs, and provide analytics for better
+                        vehicle management restricted to personal use only.</p>
+                    
+                    <!-- Image Placeholders --> 
+                    <div class="project-images">
+                    <img src="assets/FuelForm.png" alt="Fuel Entry Form - User input interface for tracking fuel consumption" class="project-image">
+                    <img src="assets/GoogleSheets.png" alt="Fuel Analytics Dashboard - Data visualization and consumption reports" class="project-image">
+                    </div>
+
+                    <!-- Click instruction footer -->
+                    <div class="image-click-instruction">
+                        <small>🖱️ Click on any image to view larger</small>
+                    </div>
+
                     <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
+                        <span>Google Apps Script</span>
+                        <span>HTML</span>
+                        <span>Google Sheets API</span>
                     </div>
                 </div>
             </div>
@@ -385,7 +403,7 @@
                         <div class="contact-details">
                             <h3>Location</h3>
                             <p>Barcelona, Spain</p>
-                            <span class="contact-link">Available for remote work</span>
+                            <span class="contact-note">Available for remote work</span>
                         </div>
                     </div>
 
@@ -394,7 +412,7 @@
                         <div class="contact-details">
                             <h3>Employment Status</h3>
                             <p>Open to opportunities</p>
-                            <span class="contact-link">Part-time • Internship</span>
+                            <span class="contact-note">Part-time • Internship</span>
                         </div>
                     </div>
                 </div>
